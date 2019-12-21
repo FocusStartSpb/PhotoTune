@@ -11,17 +11,18 @@ import UIKit
 final class ImageCollectionViewCell: UICollectionViewCell
 {
 	let imageView = UIImageView()
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		addSubview(imageView)
 		makeConstraintsForImageView()
 	}
-	
+
 	@available(*, unavailable)
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
+
 	private func makeConstraintsForImageView() {
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
