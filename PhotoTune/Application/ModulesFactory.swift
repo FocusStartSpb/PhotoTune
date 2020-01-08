@@ -21,4 +21,13 @@ final class ModulesFactory
 //			router.destinationViewController = EditedPhotoController()
 			return navController
 	}
+
+	func createEditedImagesScreenModule() -> EditedImagesCollectionViewController {
+		let repository = Repository()
+		let router = EditedImagesRouter(factory: self)
+		let presenter = EditedImagesPresenter(repository: repository, router: router)
+		let viewController = EditedImagesCollectionViewController(presenter: presenter)
+		router.viewController = viewController
+		return viewController
+	}
 }
